@@ -21,13 +21,14 @@
   <!-- endinject -->
   <link rel="shortcut icon" href="images/favicon.png" />
 </head>
+
 <body>
   <div class="container-scroller">
     <!-- partial:partials/_navbar.php -->
     <nav class="navbar col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
       <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center">
-        <a class="navbar-brand brand-logo mr-5" href="index.php"><img src="images/logo.svg" class="mr-2" alt="logo"/></a>
-        <a class="navbar-brand brand-logo-mini" href="index.php"><img src="images/logo-mini.svg" alt="logo"/></a>
+        <a class="navbar-brand brand-logo mr-5" href="index.php"><img src="images/logo.svg" class="mr-2" alt="logo" /></a>
+        <a class="navbar-brand brand-logo-mini" href="index.php"><img src="images/logo-mini.svg" alt="logo" /></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
@@ -96,7 +97,7 @@
           </li>
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-              <img src="images/faces/face28.jpg" alt="profile"/>
+              <img src="images/faces/face28.jpg" alt="profile" />
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
               <a class="dropdown-item">
@@ -128,8 +129,12 @@
         <div id="theme-settings" class="settings-panel">
           <i class="settings-close ti-close"></i>
           <p class="settings-heading">SIDEBAR SKINS</p>
-          <div class="sidebar-bg-options selected" id="sidebar-light-theme"><div class="img-ss rounded-circle bg-light border mr-3"></div>Light</div>
-          <div class="sidebar-bg-options" id="sidebar-dark-theme"><div class="img-ss rounded-circle bg-dark border mr-3"></div>Dark</div>
+          <div class="sidebar-bg-options selected" id="sidebar-light-theme">
+            <div class="img-ss rounded-circle bg-light border mr-3"></div>Light
+          </div>
+          <div class="sidebar-bg-options" id="sidebar-dark-theme">
+            <div class="img-ss rounded-circle bg-dark border mr-3"></div>Dark
+          </div>
           <p class="settings-heading mt-2">HEADER SKINS</p>
           <div class="color-tiles mx-0 px-4">
             <div class="tiles success"></div>
@@ -408,19 +413,19 @@
                   <h6 class="font-weight-normal mb-0">All systems are running smoothly! You have <span class="text-primary">3 unread alerts!</span></h6>
                 </div>
                 <div class="col-12 col-xl-4">
-                 <div class="justify-content-end d-flex">
-                  <div class="dropdown flex-md-grow-1 flex-xl-grow-0">
-                    <button class="btn btn-sm btn-light bg-white dropdown-toggle" type="button" id="dropdownMenuDate2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                     <i class="mdi mdi-calendar"></i> Today (10 Jan 2021)
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuDate2">
-                      <a class="dropdown-item" href="#">January - March</a>
-                      <a class="dropdown-item" href="#">March - June</a>
-                      <a class="dropdown-item" href="#">June - August</a>
-                      <a class="dropdown-item" href="#">August - November</a>
+                  <div class="justify-content-end d-flex">
+                    <div class="dropdown flex-md-grow-1 flex-xl-grow-0">
+                      <button class="btn btn-sm btn-light bg-white dropdown-toggle" type="button" id="dropdownMenuDate2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                        <i class="mdi mdi-calendar"></i> Today (10 Jan 2021)
+                      </button>
+                      <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuDate2">
+                        <a class="dropdown-item" href="#">January - March</a>
+                        <a class="dropdown-item" href="#">March - June</a>
+                        <a class="dropdown-item" href="#">June - August</a>
+                        <a class="dropdown-item" href="#">August - November</a>
+                      </div>
                     </div>
                   </div>
-                 </div>
                 </div>
               </div>
             </div>
@@ -509,7 +514,7 @@
                     <div class="mt-3">
                       <p class="text-muted">Downloads</p>
                       <h3 class="text-primary fs-30 font-weight-medium">34040</h3>
-                    </div> 
+                    </div>
                   </div>
                   <canvas id="order-chart"></canvas>
                 </div>
@@ -518,10 +523,10 @@
             <div class="col-md-6 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                 <div class="d-flex justify-content-between">
-                  <p class="card-title">Sales Report</p>
-                  <a href="#" class="text-info">View all</a>
-                 </div>
+                  <div class="d-flex justify-content-between">
+                    <p class="card-title">Sales Report</p>
+                    <a href="#" class="text-info">View all</a>
+                  </div>
                   <p class="font-weight-500">The total number of sessions within the date range. It is the period time a user is actively engaged with your website, page or app, etc</p>
                   <div id="sales-legend" class="chartjs-legend mt-4 mb-2"></div>
                   <canvas id="sales-chart"></canvas>
@@ -539,12 +544,12 @@
                         <div class="row">
                           <div class="col-md-12 col-xl-3 d-flex flex-column justify-content-start">
                             <div class="ml-xl-4 mt-3">
-                            <p class="card-title">Detailed Reports</p>
+                              <p class="card-title">Detailed Reports</p>
                               <h1 class="text-primary">$34040</h1>
                               <h3 class="font-weight-500 mb-xl-4 text-primary">North America</h3>
                               <p class="mb-2 mb-xl-0">The total number of sessions within the date range. It is the period time a user is actively engaged with your website, page or app, etc</p>
-                            </div>  
                             </div>
+                          </div>
                           <div class="col-md-12 col-xl-9">
                             <div class="row">
                               <div class="col-md-6 border-right">
@@ -557,7 +562,9 @@
                                           <div class="progress-bar bg-primary" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                       </td>
-                                      <td><h5 class="font-weight-bold mb-0">713</h5></td>
+                                      <td>
+                                        <h5 class="font-weight-bold mb-0">713</h5>
+                                      </td>
                                     </tr>
                                     <tr>
                                       <td class="text-muted">Washington</td>
@@ -566,7 +573,9 @@
                                           <div class="progress-bar bg-warning" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                       </td>
-                                      <td><h5 class="font-weight-bold mb-0">583</h5></td>
+                                      <td>
+                                        <h5 class="font-weight-bold mb-0">583</h5>
+                                      </td>
                                     </tr>
                                     <tr>
                                       <td class="text-muted">Mississippi</td>
@@ -575,7 +584,9 @@
                                           <div class="progress-bar bg-danger" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                       </td>
-                                      <td><h5 class="font-weight-bold mb-0">924</h5></td>
+                                      <td>
+                                        <h5 class="font-weight-bold mb-0">924</h5>
+                                      </td>
                                     </tr>
                                     <tr>
                                       <td class="text-muted">California</td>
@@ -584,7 +595,9 @@
                                           <div class="progress-bar bg-info" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                       </td>
-                                      <td><h5 class="font-weight-bold mb-0">664</h5></td>
+                                      <td>
+                                        <h5 class="font-weight-bold mb-0">664</h5>
+                                      </td>
                                     </tr>
                                     <tr>
                                       <td class="text-muted">Maryland</td>
@@ -593,7 +606,9 @@
                                           <div class="progress-bar bg-primary" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                       </td>
-                                      <td><h5 class="font-weight-bold mb-0">560</h5></td>
+                                      <td>
+                                        <h5 class="font-weight-bold mb-0">560</h5>
+                                      </td>
                                     </tr>
                                     <tr>
                                       <td class="text-muted">Alaska</td>
@@ -602,7 +617,9 @@
                                           <div class="progress-bar bg-danger" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                       </td>
-                                      <td><h5 class="font-weight-bold mb-0">793</h5></td>
+                                      <td>
+                                        <h5 class="font-weight-bold mb-0">793</h5>
+                                      </td>
                                     </tr>
                                   </table>
                                 </div>
@@ -619,12 +636,12 @@
                         <div class="row">
                           <div class="col-md-12 col-xl-3 d-flex flex-column justify-content-start">
                             <div class="ml-xl-4 mt-3">
-                            <p class="card-title">Detailed Reports</p>
+                              <p class="card-title">Detailed Reports</p>
                               <h1 class="text-primary">$34040</h1>
                               <h3 class="font-weight-500 mb-xl-4 text-primary">North America</h3>
                               <p class="mb-2 mb-xl-0">The total number of sessions within the date range. It is the period time a user is actively engaged with your website, page or app, etc</p>
-                            </div>  
                             </div>
+                          </div>
                           <div class="col-md-12 col-xl-9">
                             <div class="row">
                               <div class="col-md-6 border-right">
@@ -637,7 +654,9 @@
                                           <div class="progress-bar bg-primary" role="progressbar" style="width: 70%" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                       </td>
-                                      <td><h5 class="font-weight-bold mb-0">713</h5></td>
+                                      <td>
+                                        <h5 class="font-weight-bold mb-0">713</h5>
+                                      </td>
                                     </tr>
                                     <tr>
                                       <td class="text-muted">Washington</td>
@@ -646,7 +665,9 @@
                                           <div class="progress-bar bg-warning" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                       </td>
-                                      <td><h5 class="font-weight-bold mb-0">583</h5></td>
+                                      <td>
+                                        <h5 class="font-weight-bold mb-0">583</h5>
+                                      </td>
                                     </tr>
                                     <tr>
                                       <td class="text-muted">Mississippi</td>
@@ -655,7 +676,9 @@
                                           <div class="progress-bar bg-danger" role="progressbar" style="width: 95%" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                       </td>
-                                      <td><h5 class="font-weight-bold mb-0">924</h5></td>
+                                      <td>
+                                        <h5 class="font-weight-bold mb-0">924</h5>
+                                      </td>
                                     </tr>
                                     <tr>
                                       <td class="text-muted">California</td>
@@ -664,7 +687,9 @@
                                           <div class="progress-bar bg-info" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                       </td>
-                                      <td><h5 class="font-weight-bold mb-0">664</h5></td>
+                                      <td>
+                                        <h5 class="font-weight-bold mb-0">664</h5>
+                                      </td>
                                     </tr>
                                     <tr>
                                       <td class="text-muted">Maryland</td>
@@ -673,7 +698,9 @@
                                           <div class="progress-bar bg-primary" role="progressbar" style="width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                       </td>
-                                      <td><h5 class="font-weight-bold mb-0">560</h5></td>
+                                      <td>
+                                        <h5 class="font-weight-bold mb-0">560</h5>
+                                      </td>
                                     </tr>
                                     <tr>
                                       <td class="text-muted">Alaska</td>
@@ -682,7 +709,9 @@
                                           <div class="progress-bar bg-danger" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
                                         </div>
                                       </td>
-                                      <td><h5 class="font-weight-bold mb-0">793</h5></td>
+                                      <td>
+                                        <h5 class="font-weight-bold mb-0">793</h5>
+                                      </td>
                                     </tr>
                                   </table>
                                 </div>
@@ -722,50 +751,64 @@
                           <th>Price</th>
                           <th>Date</th>
                           <th>Status</th>
-                        </tr>  
+                        </tr>
                       </thead>
                       <tbody>
                         <tr>
                           <td>Search Engine Marketing</td>
                           <td class="font-weight-bold">$362</td>
                           <td>21 Sep 2018</td>
-                          <td class="font-weight-medium"><div class="badge badge-success">Completed</div></td>
+                          <td class="font-weight-medium">
+                            <div class="badge badge-success">Completed</div>
+                          </td>
                         </tr>
                         <tr>
                           <td>Search Engine Optimization</td>
                           <td class="font-weight-bold">$116</td>
                           <td>13 Jun 2018</td>
-                          <td class="font-weight-medium"><div class="badge badge-success">Completed</div></td>
+                          <td class="font-weight-medium">
+                            <div class="badge badge-success">Completed</div>
+                          </td>
                         </tr>
                         <tr>
                           <td>Display Advertising</td>
                           <td class="font-weight-bold">$551</td>
                           <td>28 Sep 2018</td>
-                          <td class="font-weight-medium"><div class="badge badge-warning">Pending</div></td>
+                          <td class="font-weight-medium">
+                            <div class="badge badge-warning">Pending</div>
+                          </td>
                         </tr>
                         <tr>
                           <td>Pay Per Click Advertising</td>
                           <td class="font-weight-bold">$523</td>
                           <td>30 Jun 2018</td>
-                          <td class="font-weight-medium"><div class="badge badge-warning">Pending</div></td>
+                          <td class="font-weight-medium">
+                            <div class="badge badge-warning">Pending</div>
+                          </td>
                         </tr>
                         <tr>
                           <td>E-Mail Marketing</td>
                           <td class="font-weight-bold">$781</td>
                           <td>01 Nov 2018</td>
-                          <td class="font-weight-medium"><div class="badge badge-danger">Cancelled</div></td>
+                          <td class="font-weight-medium">
+                            <div class="badge badge-danger">Cancelled</div>
+                          </td>
                         </tr>
                         <tr>
                           <td>Referral Marketing</td>
                           <td class="font-weight-bold">$283</td>
                           <td>20 Mar 2018</td>
-                          <td class="font-weight-medium"><div class="badge badge-warning">Pending</div></td>
+                          <td class="font-weight-medium">
+                            <div class="badge badge-warning">Pending</div>
+                          </td>
                         </tr>
                         <tr>
                           <td>Social media marketing</td>
                           <td class="font-weight-bold">$897</td>
                           <td>26 Oct 2018</td>
-                          <td class="font-weight-medium"><div class="badge badge-success">Completed</div></td>
+                          <td class="font-weight-medium">
+                            <div class="badge badge-success">Completed</div>
+                          </td>
                         </tr>
                       </tbody>
                     </table>
@@ -774,64 +817,64 @@
               </div>
             </div>
             <div class="col-md-5 grid-margin stretch-card">
-							<div class="card">
-								<div class="card-body">
-									<h4 class="card-title">To Do Lists</h4>
-									<div class="list-wrapper pt-2">
-										<ul class="d-flex flex-column-reverse todo-list todo-list-custom">
-											<li>
-												<div class="form-check form-check-flat">
-													<label class="form-check-label">
-														<input class="checkbox" type="checkbox">
-														Meeting with Urban Team
-													</label>
-												</div>
-												<i class="remove ti-close"></i>
-											</li>
-											<li class="completed">
-												<div class="form-check form-check-flat">
-													<label class="form-check-label">
-														<input class="checkbox" type="checkbox" checked>
-														Duplicate a project for new customer
-													</label>
-												</div>
-												<i class="remove ti-close"></i>
-											</li>
-											<li>
-												<div class="form-check form-check-flat">
-													<label class="form-check-label">
-														<input class="checkbox" type="checkbox">
-														Project meeting with CEO
-													</label>
-												</div>
-												<i class="remove ti-close"></i>
-											</li>
-											<li class="completed">
-												<div class="form-check form-check-flat">
-													<label class="form-check-label">
-														<input class="checkbox" type="checkbox" checked>
-														Follow up of team zilla
-													</label>
-												</div>
-												<i class="remove ti-close"></i>
-											</li>
-											<li>
-												<div class="form-check form-check-flat">
-													<label class="form-check-label">
-														<input class="checkbox" type="checkbox">
-														Level up for Antony
-													</label>
-												</div>
-												<i class="remove ti-close"></i>
-											</li>
-										</ul>
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">To Do Lists</h4>
+                  <div class="list-wrapper pt-2">
+                    <ul class="d-flex flex-column-reverse todo-list todo-list-custom">
+                      <li>
+                        <div class="form-check form-check-flat">
+                          <label class="form-check-label">
+                            <input class="checkbox" type="checkbox">
+                            Meeting with Urban Team
+                          </label>
+                        </div>
+                        <i class="remove ti-close"></i>
+                      </li>
+                      <li class="completed">
+                        <div class="form-check form-check-flat">
+                          <label class="form-check-label">
+                            <input class="checkbox" type="checkbox" checked>
+                            Duplicate a project for new customer
+                          </label>
+                        </div>
+                        <i class="remove ti-close"></i>
+                      </li>
+                      <li>
+                        <div class="form-check form-check-flat">
+                          <label class="form-check-label">
+                            <input class="checkbox" type="checkbox">
+                            Project meeting with CEO
+                          </label>
+                        </div>
+                        <i class="remove ti-close"></i>
+                      </li>
+                      <li class="completed">
+                        <div class="form-check form-check-flat">
+                          <label class="form-check-label">
+                            <input class="checkbox" type="checkbox" checked>
+                            Follow up of team zilla
+                          </label>
+                        </div>
+                        <i class="remove ti-close"></i>
+                      </li>
+                      <li>
+                        <div class="form-check form-check-flat">
+                          <label class="form-check-label">
+                            <input class="checkbox" type="checkbox">
+                            Level up for Antony
+                          </label>
+                        </div>
+                        <i class="remove ti-close"></i>
+                      </li>
+                    </ul>
                   </div>
                   <div class="add-items d-flex mb-0 mt-2">
-										<input type="text" class="form-control todo-list-input"  placeholder="Add new task">
-										<button class="add btn btn-icon text-primary todo-list-add-btn bg-transparent"><i class="icon-circle-plus"></i></button>
-									</div>
-								</div>
-							</div>
+                    <input type="text" class="form-control todo-list-input" placeholder="Add new task">
+                    <button class="add btn btn-icon text-primary todo-list-add-btn bg-transparent"><i class="icon-circle-plus"></i></button>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div class="row">
@@ -851,37 +894,51 @@
                       <tbody>
                         <tr>
                           <td class="pl-0">Kentucky</td>
-                          <td><p class="mb-0"><span class="font-weight-bold mr-2">65</span>(2.15%)</p></td>
+                          <td>
+                            <p class="mb-0"><span class="font-weight-bold mr-2">65</span>(2.15%)</p>
+                          </td>
                           <td class="text-muted">65</td>
                         </tr>
                         <tr>
                           <td class="pl-0">Ohio</td>
-                          <td><p class="mb-0"><span class="font-weight-bold mr-2">54</span>(3.25%)</p></td>
+                          <td>
+                            <p class="mb-0"><span class="font-weight-bold mr-2">54</span>(3.25%)</p>
+                          </td>
                           <td class="text-muted">51</td>
                         </tr>
                         <tr>
                           <td class="pl-0">Nevada</td>
-                          <td><p class="mb-0"><span class="font-weight-bold mr-2">22</span>(2.22%)</p></td>
+                          <td>
+                            <p class="mb-0"><span class="font-weight-bold mr-2">22</span>(2.22%)</p>
+                          </td>
                           <td class="text-muted">32</td>
                         </tr>
                         <tr>
                           <td class="pl-0">North Carolina</td>
-                          <td><p class="mb-0"><span class="font-weight-bold mr-2">46</span>(3.27%)</p></td>
+                          <td>
+                            <p class="mb-0"><span class="font-weight-bold mr-2">46</span>(3.27%)</p>
+                          </td>
                           <td class="text-muted">15</td>
                         </tr>
                         <tr>
                           <td class="pl-0">Montana</td>
-                          <td><p class="mb-0"><span class="font-weight-bold mr-2">17</span>(1.25%)</p></td>
+                          <td>
+                            <p class="mb-0"><span class="font-weight-bold mr-2">17</span>(1.25%)</p>
+                          </td>
                           <td class="text-muted">25</td>
                         </tr>
                         <tr>
                           <td class="pl-0">Nevada</td>
-                          <td><p class="mb-0"><span class="font-weight-bold mr-2">52</span>(3.11%)</p></td>
+                          <td>
+                            <p class="mb-0"><span class="font-weight-bold mr-2">52</span>(3.11%)</p>
+                          </td>
                           <td class="text-muted">71</td>
                         </tr>
                         <tr>
                           <td class="pl-0 pb-0">Louisiana</td>
-                          <td class="pb-0"><p class="mb-0"><span class="font-weight-bold mr-2">25</span>(1.32%)</p></td>
+                          <td class="pb-0">
+                            <p class="mb-0"><span class="font-weight-bold mr-2">25</span>(1.32%)</p>
+                          </td>
                           <td class="pb-0">14</td>
                         </tr>
                       </tbody>
@@ -933,14 +990,14 @@
                             <p class="mb-0">687</p>
                           </div>
                         </div>
-                      </div>  
+                      </div>
                     </div>
                   </div>
                 </div>
                 <div class="col-md-12 stretch-card grid-margin grid-margin-md-0">
                   <div class="card data-icon-card-primary">
                     <div class="card-body">
-                      <p class="card-title text-white">Number of Meetings</p>                      
+                      <p class="card-title text-white">Number of Meetings</p>
                       <div class="row">
                         <div class="col-8 text-white">
                           <h3>34040</h3>
@@ -981,12 +1038,12 @@
                     </li>
                     <li>
                       <div class="d-flex">
-                      <img src="images/faces/face3.jpg" alt="user">
-                     <div>
-                      <p class="text-info mb-1">Leonard Thornton</p>
-                      <p class="mb-0">Sales dashboard have been created</p>
-                      <small>11:30 am</small>
-                     </div>
+                        <img src="images/faces/face3.jpg" alt="user">
+                        <div>
+                          <p class="text-info mb-1">Leonard Thornton</p>
+                          <p class="mb-0">Sales dashboard have been created</p>
+                          <small>11:30 am</small>
+                        </div>
                       </div>
                     </li>
                     <li>
@@ -1003,9 +1060,9 @@
                       <div class="d-flex">
                         <img src="images/faces/face5.jpg" alt="user">
                         <div>
-                        <p class="text-info mb-1">Ryan Cortez</p>
-                        <p class="mb-0">Herbs are fun and easy to grow.</p>
-                        <small>9:00 am</small>
+                          <p class="text-info mb-1">Ryan Cortez</p>
+                          <p class="mb-0">Herbs are fun and easy to grow.</p>
+                          <small>9:00 am</small>
                         </div>
                       </div>
                     </li>
@@ -1025,42 +1082,65 @@
                         <table id="example" class="display expandable-table" style="width:100%">
                           <thead>
                             <tr>
-                              <th>Quote#</th>
-                              <th>Product</th>
-                              <th>Business type</th>
-                              <th>Policy holder</th>
-                              <th>Premium</th>
-                              <th>Status</th>
-                              <th>Updated at</th>
-                              <th></th>
+                              <th>Id#</th>
+                              <th>Username</th>
+                              <th>Country</th>
+                              <th>Email</th>
+                              <th>Message</th>
+                              <th>Delete</th>
+                              <th>Update</th>
                             </tr>
+
+                            <?php
+                            include 'connection.php';
+                            $select = "SELECT * FROM management";
+                            $selected = mysqli_query($conn, $select);
+                            while ($r = mysqli_fetch_array($selected)) {
+                            ?>
+                              <tr>
+                                <td><?php echo $r['id']; ?></td>
+                                <td><?php echo $r['username']; ?></td>
+                                <td><?php echo $r['email']; ?></td>
+                                <td><?php echo $r['country']; ?></td>
+                                <td><?php echo $r['password']; ?></td>
+                                <td>
+                                  <a href="delete.php?id=<?php echo $r['id']; ?>" onclick="return confirm('Are you sure?')">Delete</a>
+                                </td>
+                                <td>
+                                  <a href="update.php?id=<?php echo $r['id']; ?>">Update</a>
+                                </td>
+                              </tr>
+
+                            <?php
+                            }
+                            ?>
                           </thead>
-                      </table>
+                        </table>
                       </div>
                     </div>
                   </div>
-                  </div>
                 </div>
-
-                
               </div>
+
+
             </div>
+          </div>
         </div>
         <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.php -->
         <footer class="footer">
           <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021.  Premium <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap admin template</a> from BootstrapDash. All rights reserved.</span>
+            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Copyright © 2021. Premium <a href="https://www.bootstrapdash.com/" target="_blank">Bootstrap admin template</a> from BootstrapDash. All rights reserved.</span>
             <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="ti-heart text-danger ml-1"></i></span>
           </div>
           <div class="d-sm-flex justify-content-center justify-content-sm-between">
-            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Distributed by <a href="https://www.themewagon.com/" target="_blank">Themewagon</a></span> 
+            <span class="text-muted text-center text-sm-left d-block d-sm-inline-block">Distributed by <a href="https://www.themewagon.com/" target="_blank">Themewagon</a></span>
           </div>
-        </footer> 
+        </footer>
         <!-- partial -->
       </div>
       <!-- main-panel ends -->
-    </div>   
+    </div>
     <!-- page-body-wrapper ends -->
   </div>
   <!-- container-scroller -->
@@ -1089,4 +1169,3 @@
 </body>
 
 </html>
-
