@@ -11,10 +11,15 @@ if ($row['cnt'] == 0) {
 
 session_start();
 if (!isset($_SESSION['user_id'])) {
-    // Users exist: force login
     header("Location: pages/samples/login.php");
     exit();
 }
+
+// Fetch the logged-in user's username
+$user_id = $_SESSION['user_id'];
+$user_query = mysqli_query($conn, "SELECT username FROM management WHERE id = $user_id");
+$user_data = mysqli_fetch_assoc($user_query);
+$username = $user_data ? $user_data['username'] : 'User';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -427,7 +432,7 @@ if (!isset($_SESSION['user_id'])) {
             <div class="col-md-12 grid-margin">
               <div class="row">
                 <div class="col-12 col-xl-8 mb-4 mb-xl-0">
-                  <h3 class="font-weight-bold">Welcome Aamir</h3>
+                  <h3 class="font-weight-bold">Welcome <?php echo htmlspecialchars($username); ?></h3>
                   <h6 class="font-weight-normal mb-0">All systems are running smoothly! You have <span class="text-primary">3 unread alerts!</span></h6>
                 </div>
                 <div class="col-12 col-xl-4">
@@ -1093,7 +1098,7 @@ if (!isset($_SESSION['user_id'])) {
             <div class="col-md-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <p class="card-title">Advanced Table</p>
+                  <p class="card-title">Other Users</p>
                   <div class="row">
                     <div class="col-12">
                       <div class="table-responsive">
