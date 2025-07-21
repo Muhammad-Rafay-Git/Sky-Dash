@@ -68,7 +68,7 @@ if (isset($_POST['submit'])) {
     $username = $_POST['username'];
     $email = $_POST['email'];
     $country = $_POST['country'];
-    $password = $_POST['password'];
+    $password = ($_POST['password']);
 
     $query = "INSERT INTO management (username, email, country, password)
               VALUES ('$username','$email', '$country', '$password')";

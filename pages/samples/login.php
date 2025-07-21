@@ -1,3 +1,27 @@
+<?php
+session_start();
+include '../../connection.php';
+
+if (isset($_POST['login'])) {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    $query = "SELECT * FROM management WHERE username='$username'";
+    $result = mysqli_query($conn, $query);
+    $user = mysqli_fetch_assoc($result);
+
+    if (!$user) {
+        $error = "User does not exist!";
+    } elseif ($password !== $user['password']) {
+        $error = "Password is incorrect!";
+    } else {
+        $_SESSION['user_id'] = $user['id'];
+        header("Location: ../../index.php");
+        exit();
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,15 +55,15 @@
               </div>
               <h4>Hello! let's get started</h4>
               <h6 class="font-weight-light">Sign in to continue.</h6>
-              <form class="pt-3">
+              <form class="pt-3" method="POST" action="">
                 <div class="form-group">
-                  <input type="email" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username">
+                  <input type="text" name="username" class="form-control form-control-lg" id="exampleInputEmail1" placeholder="Username" required>
                 </div>
                 <div class="form-group">
-                  <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password">
+                  <input type="password" name="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password" required>
                 </div>
                 <div class="mt-3">
-                  <a class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" href="../../index.php">SIGN IN</a>
+                  <button type="submit" name="login" class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn">SIGN IN</button>
                 </div>
                 <div class="my-2 d-flex justify-content-between align-items-center">
                   <div class="form-check">
@@ -58,6 +82,7 @@
                 <div class="text-center mt-4 font-weight-light">
                   Don't have an account? <a href="register.php" class="text-primary">Create</a>
                 </div>
+                <?php if (isset($error)) echo "<p style='color:red;'>$error</p>"; ?>
               </form>
             </div>
           </div>

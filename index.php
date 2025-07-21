@@ -1,3 +1,21 @@
+<?php
+include 'connection.php';
+$user_check = mysqli_query($conn, "SELECT COUNT(*) as cnt FROM management");
+$row = mysqli_fetch_assoc($user_check);
+
+if ($row['cnt'] == 0) {
+    // No users: force registration
+    header("Location: pages/samples/register.php");
+    exit();
+}
+
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    // Users exist: force login
+    header("Location: pages/samples/login.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
