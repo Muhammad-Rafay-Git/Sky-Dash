@@ -33,57 +33,81 @@
               <h6 class="font-weight-light">Signing up is easy. It only takes a few steps</h6>
 
               <?php
-include '../../connection.php';
+              include '../../connection.php';
 
-// Create database if it doesn't exist
-$data_base = "CREATE DATABASE IF NOT EXISTS skydash";
+              // Create database if it doesn't exist
+              $data_base = "CREATE DATABASE IF NOT EXISTS skydash";
 
-if (mysqli_query($conn, $data_base)) {
-    echo 'Database successfully created';
-} else {
-    echo 'Database not successfully created';
-    mysqli_error($conn);
-}
+              if (mysqli_query($conn, $data_base)) {
+                echo 'Database successfully created';
+              } else {
+                echo 'Database not successfully created';
+                mysqli_error($conn);
+              }
 
-// Select the database
-mysqli_select_db($conn, 'skydash');
+              // Select the database
+              mysqli_select_db($conn, 'skydash');
 
-// Create table if it doesn't exist
-$table_created = "CREATE TABLE IF NOT EXISTS management (
-    username VARCHAR(50),
-    email VARCHAR(100),
-    country VARCHAR(100),
-    password VARCHAR(100)
-)";
+              // Create table if it doesn't exist (add profile column)
+              $table_created = "CREATE TABLE IF NOT EXISTS management (
+                  id int auto_increment PRIMARY KEY,
+                  username VARCHAR(50),
+                  email VARCHAR(100),
+                  country VARCHAR(100),
+                  password VARCHAR(100),
+                  profile VARCHAR(255)
+              )";
 
-if (mysqli_query($conn, $table_created)) {
-    echo 'Table successfully created';
-} else {
-    echo 'Table not successfully created';
-    mysqli_error($conn);
-}
+              if (mysqli_query($conn, $table_created)) {
+                echo 'Table successfully created';
+              } else {
+                echo 'Table not successfully created';
+                mysqli_error($conn);
+              }
 
-// Insert data into the table if the form is submitted
-if (isset($_POST['submit'])) {
-    $username = $_POST['username'];
-    $email = $_POST['email'];
-    $country = $_POST['country'];
-    $password = ($_POST['password']);
+              // Insert data into the table if the form is submitted
+              if (isset($_POST['submit'])) {
+                $username = $_POST['username'];
+                $email = $_POST['email'];
+                $country = $_POST['country'];
+                $password = $_POST['password'];
 
-    $query = "INSERT INTO management (username, email, country, password)
-              VALUES ('$username','$email', '$country', '$password')";
+                // Handle file upload first
+                $profilePath = '';
+                if (isset($_FILES['profile']) && $_FILES['profile']['error'] === 0) {
+                  $imageName = $_FILES['profile']['name'];
+                  $imageTemp = $_FILES['profile']['tmp_name'];
 
-    $result = mysqli_query($conn, $query);
+                  $uploadDir = '../../uploads/'; // Directory to store uploaded images
+                  $profilePath = $uploadDir . basename($imageName);
 
-    if ($result) {
-        echo 'Successfully submitted into database';
-    } else {
-        echo 'ERROR: ' . mysqli_error($conn);
-    }
-}
-?>
+                  // Ensure upload directory exists
+                  if (!is_dir($uploadDir)) {
+                    mkdir($uploadDir, 0777, true);
+                  }
 
-              <form class="pt-3" method="POST" action="register.php">
+                  // Move the uploaded file
+                  if (move_uploaded_file($imageTemp, $profilePath)) {
+                    // success
+                  } else {
+                    $profilePath = ''; // fallback if upload fails
+                  }
+                }
+
+                $query = "INSERT INTO management (username, email, country, password, profile)
+              VALUES ('$username','$email', '$country', '$password', '$profilePath')";
+
+                $result = mysqli_query($conn, $query);
+
+                if ($result) {
+                  echo 'Successfully submitted into database';
+                } else {
+                  echo 'ERROR: ' . mysqli_error($conn);
+                }
+              }
+              ?>
+
+              <form class="pt-3" method="POST" action="register.php" enctype="multipart/form-data">
                 <div class="form-group">
                   <input type="text" class="form-control form-control-lg" id="exampleInputUsername1" placeholder="Username" name="username" required>
                 </div>
@@ -173,6 +197,9 @@ if (isset($_POST['submit'])) {
                 </div>
                 <div class="form-group">
                   <input type="password" class="form-control form-control-lg" id="exampleInputPassword1" placeholder="Password" name="password" required>
+                </div>
+                <div class="form-group mb-5">
+                  <input type="file" name="profile" accept="image/*">
                 </div>
                 <div class="mb-4">
                   <div class="form-check">

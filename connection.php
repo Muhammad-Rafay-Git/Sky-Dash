@@ -28,7 +28,8 @@ $table_created = "CREATE TABLE IF NOT EXISTS management (
     username VARCHAR(50),
     email VARCHAR(100),
     country VARCHAR(100),
-    password VARCHAR(100)
+    password VARCHAR(100),
+    profile VARCHAR(255)
 )";
 if (!mysqli_query($conn, $table_created)) {
     die("Error creating table: " . mysqli_error($conn));

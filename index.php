@@ -4,22 +4,23 @@ $user_check = mysqli_query($conn, "SELECT COUNT(*) as cnt FROM management");
 $row = mysqli_fetch_assoc($user_check);
 
 if ($row['cnt'] == 0) {
-    // No users: force registration
-    header("Location: pages/samples/register.php");
-    exit();
+  // No users: force registration
+  header("Location: pages/samples/register.php");
+  exit();
 }
 
 session_start();
 if (!isset($_SESSION['user_id'])) {
-    header("Location: pages/samples/login.php");
-    exit();
+  header("Location: pages/samples/login.php");
+  exit();
 }
 
 // Fetch the logged-in user's username
 $user_id = $_SESSION['user_id'];
-$user_query = mysqli_query($conn, "SELECT username FROM management WHERE id = $user_id");
+$user_query = mysqli_query($conn, "SELECT username, profile FROM management WHERE id = $user_id");
 $user_data = mysqli_fetch_assoc($user_query);
 $username = $user_data ? $user_data['username'] : 'User';
+$profile_img = (!empty($user_data['profile']) && file_exists($user_data['profile'])) ? $user_data['profile'] : 'images/faces/user.avif';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -120,7 +121,7 @@ $username = $user_data ? $user_data['username'] : 'User';
           </li>
           <li class="nav-item nav-profile dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="profileDropdown">
-              <img src="images/faces/face28.jpg" alt="profile" />
+              <img src="<?php echo htmlspecialchars($profile_img); ?>" alt="profile" />
             </a>
             <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="profileDropdown">
               <a class="dropdown-item">
