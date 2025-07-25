@@ -105,6 +105,11 @@
 
                 if ($result) {
                   echo 'Successfully submitted into database';
+                  echo '<script>
+                  window.onload = function() {
+                  alert("You are now registered successfully!");
+                  }
+                  </script>';
                 } else {
                   echo 'ERROR: ' . mysqli_error($conn);
                 }

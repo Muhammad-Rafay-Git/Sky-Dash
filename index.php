@@ -34,7 +34,7 @@ $profile_img = (!empty($user_data['profile']) && file_exists($user_data['profile
   <link rel="stylesheet" href="vendors/feather/feather.css">
   <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
   <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
-  <link rel="stylesheet" href="css/credentials-blur.css">
+  <link rel="stylesheet" href="css/credentials/credentials.css">
   <!-- endinject -->
   <!-- Plugin css for this page -->
   <link rel="stylesheet" href="vendors/datatables.net-bs4/dataTables.bootstrap4.css">
@@ -1100,7 +1100,7 @@ $profile_img = (!empty($user_data['profile']) && file_exists($user_data['profile
             <div class="col-md-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <p class="card-title">Other Users</p>
+                  <p class="card-title">Users Dashboard</p>
                   <div class="row">
                     <div class="col-12">
                       <div class="credentials-blur-container" id="credentials-blur-container">
@@ -1124,8 +1124,8 @@ $profile_img = (!empty($user_data['profile']) && file_exists($user_data['profile
                                 <th>Country</th>
                                 <th>Email</th>
                                 <th>Password</th>
-                                <th>Delete</th>
-                                <th>Update</th>
+                                <th>Images</th>
+                                <th>Action</th>
                               </tr>
                             </thead>
                             <tbody>
@@ -1142,10 +1142,15 @@ $profile_img = (!empty($user_data['profile']) && file_exists($user_data['profile
                                 <td><?php echo $r['email']; ?></td>
                                 <td><?php echo $r['password']; ?></td>
                                 <td>
-                                  <a href="delete.php?id=<?php echo $r['id']; ?>" onclick="return confirm('Are you sure?')">Delete</a>
+                                  <?php if (!empty($r['profile']) && file_exists($r['profile'])): ?>
+                                    <img src="<?php echo htmlspecialchars($r['profile']); ?>" alt="User Image" style="width:50px;height:50px;object-fit:cover;border-radius:50%;">
+                                  <?php else: ?>
+                                    <img src="images/faces/user.avif" alt="No Image" style="width:50px;height:50px;object-fit:cover;border-radius:50%;">
+                                  <?php endif; ?>
                                 </td>
                                 <td>
-                                  <a href="update.php?id=<?php echo $r['id']; ?>">Update</a>
+                                  <a href="update.php?id=<?php echo $r['id']; ?>" class="btn btn-primary btn-sm mr-1">Edit</a>
+                                  <a href="delete.php?id=<?php echo $r['id']; ?>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure?')">Delete</a>
                                 </td>
                               </tr>
                             <?php
@@ -1203,7 +1208,7 @@ $profile_img = (!empty($user_data['profile']) && file_exists($user_data['profile
   <!-- Custom js for this page-->
   <script src="js/dashboard.js"></script>
   <script src="js/Chart.roundedBarCharts.js"></script>
-  <script src="js/credentials-blur.js"></script>
+  <script src="js/credentials.js"></script>
   <!-- End custom js for this page-->
 </body>
 
