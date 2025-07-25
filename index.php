@@ -34,6 +34,7 @@ $profile_img = (!empty($user_data['profile']) && file_exists($user_data['profile
   <link rel="stylesheet" href="vendors/feather/feather.css">
   <link rel="stylesheet" href="vendors/ti-icons/css/themify-icons.css">
   <link rel="stylesheet" href="vendors/css/vendor.bundle.base.css">
+  <link rel="stylesheet" href="css/credentials-blur.css">
   <!-- endinject -->
   <!-- Plugin css for this page -->
   <link rel="stylesheet" href="vendors/datatables.net-bs4/dataTables.bootstrap4.css">
@@ -1102,19 +1103,32 @@ $profile_img = (!empty($user_data['profile']) && file_exists($user_data['profile
                   <p class="card-title">Other Users</p>
                   <div class="row">
                     <div class="col-12">
-                      <div class="table-responsive">
-                        <table id="example" class="display expandable-table" style="width:100%">
-                          <thead>
-                            <tr>
-                              <th>Id#</th>
-                              <th>Username</th>
-                              <th>Country</th>
-                              <th>Email</th>
-                              <th>Message</th>
-                              <th>Delete</th>
-                              <th>Update</th>
-                            </tr>
-
+                      <div class="credentials-blur-container" id="credentials-blur-container">
+                        <div class="credentials-blur-overlay" id="blur-overlay">
+                          <form id="blur-password-form" class="blur-password-form" onsubmit="return checkBlurPassword(event)">
+                            <div>
+                              <label for="blur-password-input" style="font-weight:bold;">Enter password to view credentials:</label>
+                              <input type="password" id="blur-password-input" class="form-control" autocomplete="off" required>
+                            </div>
+                            <small class="form-text text-muted">Hint: Ask the password from Muhammad Rafay</small>
+                            <button type="submit" class="btn btn-primary btn-sm mt-2">Unlock</button>
+                            <div id="blur-password-error" style="color:red;display:none;margin-top:5px;">Incorrect password.</div>
+                          </form>
+                        </div>
+                        <div class="table-responsive credentials-blur-content" id="credentials-blur-content">
+                          <table id="example" class="display expandable-table" style="width:100%">
+                            <thead>
+                              <tr>
+                                <th>Id#</th>
+                                <th>Username</th>
+                                <th>Country</th>
+                                <th>Email</th>
+                                <th>Password</th>
+                                <th>Delete</th>
+                                <th>Update</th>
+                              </tr>
+                            </thead>
+                            <tbody>
                             <?php
                             include 'connection.php';
                             $select = "SELECT * FROM management";
@@ -1124,8 +1138,8 @@ $profile_img = (!empty($user_data['profile']) && file_exists($user_data['profile
                               <tr>
                                 <td><?php echo $r['id']; ?></td>
                                 <td><?php echo $r['username']; ?></td>
-                                <td><?php echo $r['email']; ?></td>
                                 <td><?php echo $r['country']; ?></td>
+                                <td><?php echo $r['email']; ?></td>
                                 <td><?php echo $r['password']; ?></td>
                                 <td>
                                   <a href="delete.php?id=<?php echo $r['id']; ?>" onclick="return confirm('Are you sure?')">Delete</a>
@@ -1134,12 +1148,12 @@ $profile_img = (!empty($user_data['profile']) && file_exists($user_data['profile
                                   <a href="update.php?id=<?php echo $r['id']; ?>">Update</a>
                                 </td>
                               </tr>
-
                             <?php
                             }
                             ?>
-                          </thead>
-                        </table>
+                            </tbody>
+                          </table>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -1189,6 +1203,7 @@ $profile_img = (!empty($user_data['profile']) && file_exists($user_data['profile
   <!-- Custom js for this page-->
   <script src="js/dashboard.js"></script>
   <script src="js/Chart.roundedBarCharts.js"></script>
+  <script src="js/credentials-blur.js"></script>
   <!-- End custom js for this page-->
 </body>
 
