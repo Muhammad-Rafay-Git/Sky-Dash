@@ -27,7 +27,7 @@ if (isset($_POST['update'])) {
                 WHERE id = $id";
 
     mysqli_query($conn, $update);
-    header("Location: fetch.php");
+    header("Location: index.php");
 }
 ?>
 

@@ -78,8 +78,12 @@
                   $imageName = $_FILES['profile']['name'];
                   $imageTemp = $_FILES['profile']['tmp_name'];
 
-                  $uploadDir = '../../uploads/'; // Directory to store uploaded images
-                  $profilePath = $uploadDir . basename($imageName);
+                  // Move file to outside uploads folder
+                  $uploadDir = '../../uploads/';
+                  $movePath = $uploadDir . basename($imageName);
+
+                  // Save only the web-accessible path to DB
+                  $profilePath = 'uploads/' . basename($imageName);
 
                   // Ensure upload directory exists
                   if (!is_dir($uploadDir)) {
@@ -87,7 +91,7 @@
                   }
 
                   // Move the uploaded file
-                  if (move_uploaded_file($imageTemp, $profilePath)) {
+                  if (move_uploaded_file($imageTemp, $movePath)) {
                     // success
                   } else {
                     $profilePath = ''; // fallback if upload fails
